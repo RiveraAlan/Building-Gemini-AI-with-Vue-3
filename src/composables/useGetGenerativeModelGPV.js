@@ -2,7 +2,7 @@ import {useGenAi} from './useGenAi.js'
 import {useFileToGeneratePart} from './useFileToGeneratePart.js';
 
 export const useGetGenerativeModelGPV = async (prompt, files) => {
-    const model = await useGenAi("gemini-pro-vision");
+    const model = await useGenAi("gemini-1.5-flash");
 
     console.log({model});
 

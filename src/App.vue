@@ -2,6 +2,8 @@
 import { ref } from 'vue';
 import GeminiAI from './components/GeminiAI.vue';
 import GeminiAITNI from './components/GeminiAITNI.vue';
+import Snippy from './components/Snippy.vue';
+import Analyzer from './components/Analyzer.vue';
 
 const geminiOptions = ref('text');
 
@@ -9,18 +11,10 @@ const geminiOptions = ref('text');
 
 <template>
   <header>
-    <select v-model="geminiOptions">
-      <option disabled value="">Please select one</option>
-      <option value="text">Text</option>
-      <option value="textImage">Text and Image</option>
-      <option disabled>Chat (coming soon...)</option>
-    </select>
   </header>
   <main>
-    <KeepAlive>
-      <GeminiAI v-if="geminiOptions === 'text'" />
-      <GeminiAITNI v-else />
-    </KeepAlive>
+    <Snippy />
+    <Analyzer />
   </main>
 </template>
 
@@ -29,6 +23,7 @@ header,
 main {
   max-width: 1280px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 }
